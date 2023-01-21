@@ -1,24 +1,42 @@
 <div class="container">
   <div class="row">
-    <label>Server name</label>
-    <!-- <input 
-      type="text"
-      class="form-control"
-      (input)="onUpdateServerName($event)"> -->
-    <input 
-      type="text"
-      class="form-control"
-      [(ngModel)]="serverName">
-    <p>{{ serverName }}</p>
-    <app-server></app-server>
-    <app-server></app-server>
-    <button 
-      [disabled]="allowNewServer" 
-      class="btn btn-primary"
-      (click)="onCreateServer()"
-      >Add Server</button>
-    <hr>
-    <p>{{ serverCreationStatus }}</p>
+    <div class="col-xs-12">
+      <label>Server name</label>
+      <!-- <input 
+        type="text"
+        class="form-control"
+        (input)="onUpdateServerName($event)"> -->
+      <input 
+        type="text"
+        class="form-control"
+        [(ngModel)]="serverName">
+      <app-server></app-server>
+      <app-server></app-server>
+      <button 
+        [disabled]="allowNewServer" 
+        class="btn btn-primary"
+        (click)="onCreateServer()"
+        >Add Server</button>
+      <hr>
+      <p>{{ serverCreationStatus }}</p>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    <div class="row">
+      <label>Username</label>
+      <input 
+        type="text"
+        class="form-control"
+        [(ngModel)]="username">
+      <p>The username is {{ username }}</p>
+      <button 
+        class="btn btn-primary"
+        [disabled]="username === ''"
+        (click)="onChangeUsername()">Clear input</button>
+      
+    </div>
   </div>
 </div>
+
+
 
