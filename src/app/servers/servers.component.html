@@ -17,8 +17,19 @@
         <p>No server was created</p>
       </ng-template>
       <hr>
-      <app-server></app-server>
-      <app-server></app-server>
+      <app-server *ngFor="let server of servers"></app-server>
+    </div>
+  </div>
+  <!-- the assignment-->
+  <div class="row">
+    <div class="col-xs-12">
+      <button 
+        class="btn btn-primary"
+        (click)="onDisplay()">Display Details</button>
+      <p *ngIf="displaySecretPass">Secret Password</p>
+      <p *ngFor="let number of numbers"
+        [ngStyle]="{'background-color': number > 5 ? 'blue': 'transparent'}"
+        [ngClass]="{white: number > 5}">The number of clicks is {{number}}</p>
     </div>
   </div>
 </div>
