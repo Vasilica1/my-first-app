@@ -12,8 +12,7 @@ export class ServersComponent {
   buttonClicked: boolean = false;
   servers = ['TestServer1', 'TestServer 2'];
   displaySecretPass: boolean = true;
-  increment: number = 0;
-  numbers: number[] = [];
+  numbers: any[] = [];
 
   constructor() {
     setTimeout(() => {
@@ -28,8 +27,7 @@ export class ServersComponent {
 
   onDisplay() {
     this.displaySecretPass = !this.displaySecretPass;
-    this.increment = this.increment + 1;
-    this.numbers.push(this.increment);
+    this.numbers.push(new Date());
   }
 
   onUpdateServerName(event: Event) {
